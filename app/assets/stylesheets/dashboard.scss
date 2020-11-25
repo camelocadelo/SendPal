@@ -1,0 +1,316 @@
+.dashboard-content-container {
+    display: flex;
+    justify-content: center;
+    background-color: #f5f7fa;
+    height: 80vh;
+    width: 100vw;
+}
+
+.left-container {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    padding-top: 15px;
+    background-color: #f5f7fa;
+    margin-left: 50px;
+}
+
+.greeting-container {
+    display: flex;
+    color: #2c2e2f;;
+    font-family: PayPal Sans Big Light, Helvetica Neue,Arial,sans-serif;;
+    font-size: 24px;
+    font-weight: bold;
+    margin: 36px 0;
+    width: 90%;
+    height: 8%;
+}
+
+
+.balance-container {
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    border-radius: 4px;
+    width: 90%;
+    height: 194px;
+    color: #2c2e2f;
+    box-shadow: 0 2px 1px 0 rgba(0, 0, 0, 0.1);
+    margin: 10px 0 0 0;
+    text-align: left;
+}
+
+.balance-header-message {
+    color: #0070ba;
+    font-weight: 500;
+    margin-left: 20px;
+    font-size: 20px;
+}
+
+.currency-balance {
+    color: #2c2e2f;
+    font-size: 44px;
+    margin-left: 20px;
+    margin-top: 10px;
+    height: 13px;
+}
+
+.currency-balance-message {
+    margin-left: 20px;
+    margin-bottom: -5px;
+    color: #687173;
+    font-size: 12px;
+}
+
+.pay-btn {
+    margin-top: 5px;    
+    margin-left: 20px;
+    border: 1px solid#0070ba;
+    border-radius: 25px;
+    height: 30px;
+    width: 125px;
+    text-decoration: none;
+    background-color: transparent;
+    color: #0070ba;
+    cursor: pointer;
+    &:active {
+    text-decoration: underline;
+    box-shadow: 0 0 2px #0070ba;
+    }
+    &:focus{
+    outline: 0;
+    }
+    &:hover {
+    border: 2px solid #003087;
+    font-weight: bold;
+    color: #003087;
+    }
+}
+
+
+.right-container {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    margin-top: 30px;
+    padding-top: 15px;
+}
+
+.transaction-container{
+    height: 15%;
+}
+
+.transaction-Btns {
+    display: flex;
+    justify-content: space-evenly;
+    outline: none;
+}
+
+#transaction-Btn{
+    // outline: none;
+    box-shadow: 2px 2px 5px 1px #44429d52;
+    background-color: #005ea6;
+    height: 48px;
+    width: 48px;
+    border-radius: 50%;
+    
+    border: none;
+    outline: none;
+    color: white;
+}
+
+#transaction-Btn-icon1 {
+    height: 35px
+}
+
+#transaction-Btn-icon2 {
+    margin-top: 5px;;
+    height: 35px
+}
+
+.quicklink-btns {
+    &:hover {
+    border-bottom: 1px solid #2c2e2f;
+    }
+    &:focus{
+    outline: 0;
+  }
+}
+
+#quicklinks {
+    text-align: center;
+    color: #2c2e2f;
+}
+
+.pals-container{
+    text-align: center;
+    font-size: 22px;
+    padding: 0 50px;
+}
+
+.pals-header{
+    font-size: 18px;
+    margin-bottom: 25px;
+    text-align: left;
+    font-weight: 800;
+    color: #0070ba;
+    font-family: PayPal Sans Big Medium;
+}
+
+.pals-list {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.pals-details > button {
+    outline: none;
+    box-shadow: 2px 2px 5px 1px #44429d52;
+}
+
+.pals-details > p {
+    margin-top: 5px;
+    font-size: 12px;
+}
+
+#pals {
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    font-family: 'PayPal Sans Big Light';
+    background: linear-gradient(217deg, #bb2c2d, #5d67cc);
+    height: 48px;
+    width: 48px;
+    border-radius: 50%;
+    border: none;
+}
+
+.activities-container{
+    display: flex;
+    flex-direction: column;
+    padding: 0 50px;
+    height: 390px;
+}
+
+.toggle-activity{
+    display: flex;
+    flex-direction: row;
+}
+
+.activities-header, #activities-separator{
+    text-align: left;
+    padding-bottom: 4px;
+    margin: 20px 3px;
+    font-size: 18px;
+    font-weight: 800;
+    color: #0070ba;
+    font-family: PayPal Sans Big Medium;
+    cursor: pointer;
+    &:hover {
+        border-bottom: 1px solid #003087;
+    }
+}
+
+#activity-separator{
+    align-self: center;
+    padding-bottom: 4px;
+    font-size: 18px;
+    font-weight: 800;
+    padding: 0 10px;
+    color: #0070ba;
+    font-family: PayPal Sans Big Medium;
+}
+
+.activity-list-items{
+    overflow: auto;
+    height: 42vh;
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.request-list-body {
+    display: flex;
+    justify-content: space-between;
+}
+
+.request-list-body > button {
+    border: 1px solid #0070ba;
+    border-radius: 25px;
+    margin-top: 20px;
+    font-size: 11px;
+    height: 20px;
+    text-decoration: none;
+    background-color: transparent;
+    color: #0070ba;
+    cursor: pointer;
+    &:active {
+        text-decoration: underline;
+    }
+    &:focus{
+        outline: 0;
+    }
+    &:hover {
+        border: 1.5px solid red;
+        font-weight: bold;
+        color: red;
+        background-color: white;
+        transition: background-color .4s ease-out;
+  }
+}
+
+.payment-list-items, .request-list-items{
+    padding: 6px 0 4px 25px;
+    border-bottom: 1px solid grey;
+    border-style: dotted;
+    list-style: none;
+}
+
+.payment-list-items:hover, .request-list-items:hover{
+    background-color: #d3e0f79c;
+    border-left: 3px solid #003087;
+}
+
+.request-list-items:hover{
+    cursor: pointer;
+}
+
+.payment-list-header, .request-list-header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.payment-user, .request-user{
+    font-size: 14.5px;
+    font-family: PayPal Sans Big Medium;
+}
+
+.payment-amount, .request-amount{
+    font-size: 14.5px;
+    padding-right: 20px;
+}
+
+.payment-amount{
+    color: red;
+}
+
+.request-amount{
+    color: green;
+}
+
+.payment-date, .payment-note, .request-date, .request-note{
+    font-size: 11px;
+}
+
+.payment-date, .request-date{
+    padding-top: 12px;
+}
+
+.payment-note, .request-note{
+    margin-top: -6px;
+}
+
+.pay-link{
+    color: #003087;
+    font-weight: bold;
+}

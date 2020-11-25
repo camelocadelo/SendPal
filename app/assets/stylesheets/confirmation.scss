@@ -1,0 +1,105 @@
+.confirmation-container {
+    // display: flex;
+    // align-items: center;
+    // flex-direction: column;
+    // justify-content: space-evenly;
+    height: 80vh;
+    width: 100vw;
+    background-color: #f5f7fa;
+}
+
+.confirmation-wrapper{
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    margin: auto;
+    justify-content: space-evenly;
+    // border: 2px solid red;
+    align-items: center;
+    height: 66%;
+}
+
+.confirmation-content{
+    border: 1px solid rgba(238, 237, 237, 0.817);
+    // margin-top: -90px;
+    height: 275px;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ffff;
+}
+
+.confirmation-image{
+    width: 200px;
+    margin-top: 20px;
+}
+
+.confirmation-text{
+    display: flex;
+    flex-direction: row;
+    font-size: 16px;
+    color: #2c2e2f;
+    font-family: PayPal Sans Big Light, Helvetica Neue,Arial,sans-serif;
+}
+
+.confirmation-text > p, .confirmation-text > h3 {
+    font-family: PayPal Sans Big Medium;
+    margin: 0 4px;
+    color: green;
+}
+
+.confirmation-text > p {
+    color: #0070ba
+}
+
+.confirmation-button{
+    width: 350px;
+    height: 50px;
+    border: 1px solid #0070ba;
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    background-color: #0070ba;
+    color: white;
+    font-size: 16px;
+    font-family: PayPal Sans Big Light, Helvetica Neue,Arial,sans-serif;
+    cursor: pointer;
+    &:active {
+    text-decoration: underline;
+    color: white;
+    box-shadow: 0 0 2px #0070ba;
+    }
+    &:focus{
+    outline: 0;
+    }
+    &:hover {
+    background-color: #003087;
+    font-weight: bold;
+    color: white;
+    transition: background-color .2s ease-out;
+    }
+}
+
+.confirmation-link1{
+    color: white;
+}
+
+.confirmation-link{
+    margin-top: -10px;
+    color: #003087;
+    font-size: 16px;
+    text-decoration: none;
+    &:active {
+    // text-decoration: underline;
+    // box-shadow: 0 0 2px #003087;
+    border-bottom: 1.5px solid #003087;
+    // &:hover {
+    // }
+    }
+    &:focus{
+    outline: 0;
+  }
+}

@@ -1,0 +1,38 @@
+.search-bar{
+    width: 400px;
+    text-align: center;
+    font-family:PayPal Sans Big Medium;
+    background-color: transparent;
+    font-size: 21px;
+    margin: 15px 0 5px 0;
+    border: none;
+    outline: none;
+    text-decoration: none;
+}
+
+.search-results-container {
+    position: absolute;
+    border: 1px solid #cecccc;
+    background: white;
+    width: 320px;
+    height: 225px;
+    font-family: 'PayPal Sans Big Light';
+    font-size: 13px;
+    display: none;
+    margin-left: 35px;
+    overflow: auto;
+    cursor: pointer;
+}
+
+.search-results-container option {
+    padding: 5px;
+}
+
+.search-results-container option:hover {
+    background-color: #d3e0f79c;
+    border-left: 3px solid #003087;
+}
+
+.search-results-container, .search-results-container:hover {
+    display: block;
+}

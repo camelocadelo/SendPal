@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Sendpal</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag 'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+    <%= favicon_link_tag asset_path("favicon.png") %>
+    <script type="text/javascript"> 
+      
+      window.sendpalLogo = "<%= image_url("logo.png")%>"
+      window.sendpalBanner = "<%= image_url("sendpal-banner.jpg")%>"
+      window.sendpal = "<%= image_url("sendpal.jpg")%>"
+      window.test_user = "<%= image_url("account-img-96.png")%>"
+      window.request_icon = "<%= image_url("request-icon.png")%>"
+      window.send_icon = "<%= image_url("send-icon.png")%>"
+      window.check_icon = "<%= image_url("check-64.png")%>"
+      window.linkedIn = "<%= image_url("linkedin.png")%>"
+      window.gitHub = "<%= image_url("github.png")%>"
+      window.angelList = "<%= image_url("angellist.png")%>"
+      
+    </script>
+  </head>
+
+  <body>
+    <%= yield %>
+  </body>
+</html>

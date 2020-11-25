@@ -1,0 +1,153 @@
+.form-main {
+    display: flex;
+    background: #f5f7fa;
+    justify-content: center;
+    align-items: center;
+    height: 85vh;
+}
+
+.form-content{
+    height: 80vh;
+    width: 100%;
+    margin: auto;
+    background-color: #f5f7fa;
+}
+
+.form-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 500px;
+    margin: auto;
+}
+
+.form-box {
+    border: 1px solid rgba(238, 237, 237, 0.817);
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.1);
+    height: 356px;
+    margin-top: 35px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ffff;
+}
+
+.form-fields {
+    height: 450px;
+    flex-direction: column;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.form-header {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-evenly;
+    font-size: 20px;
+}
+
+.form-email{
+    text-decoration: none;
+    width: 80%;
+    border: none;
+    margin-top: -25px;
+    font-size: 20px;
+    text-align: center;
+    font-family: PayPalSansBig-Regular, "Helvetica Neue", Arial, sans-serif;
+}
+
+.form-amount {
+    text-align: center;
+    border: none;
+    width: 100%;
+    background-color: transparent;
+    height: 48px;
+    font-size: 40px;
+    font-family: PayPalSansBig-Regular, "Helvetica Neue", Arial, sans-serif;
+    padding-bottom: 20px;
+    &:focus{
+    outline: 0;
+    }
+}
+
+.note-box-pay, .note-box-request {
+    width: 85%;
+    height: 70px;
+    margin-bottom: 20px;
+    border: none;
+    border-top: 1px solid rgb(187, 187, 187);
+    &:focus{
+    outline: 0;
+    }
+}
+
+.note-box-request {
+    width: 96.5%;
+}
+
+
+.form-message-container{
+    height: 70px;
+    width: 100%
+}
+
+.message{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    height: 100%;
+    font-size: 13px;
+    margin: auto;
+    padding-top: 30px;
+}
+
+.continue-Btn {
+    width: 350px;
+    height: 50px;
+    border: 1px solid #0070ba;
+    border-radius: 25px;
+    padding: 10px 19px;
+    text-decoration: none;
+    background-color: #0070ba;
+    color: white;
+    font-size: 16px;
+    font-family: PayPal Sans Big Light, Helvetica Neue,Arial,sans-serif;
+    cursor: pointer;
+    &:active {
+    text-decoration: underline;
+    color: white;
+    box-shadow: 0 0 2px #0070ba;
+    }
+    &:focus{
+    outline: 0;
+    }
+    &:hover {
+    background-color: #003087;
+    font-weight: bold;
+    color: white;
+    transition: background-color .2s ease-out;
+    }
+    z-index: 10;
+}
+
+.cancel-link{
+    text-align: center;
+    margin-top: 20px;
+}
+
+.cancel-text{
+    color: #003087;
+    font-size: 15px;
+    &:focus{
+    outline: 0;
+    }
+    &:hover {
+    border-bottom: 1px solid #2c2e2f;
+    }
+}

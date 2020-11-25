@@ -1,0 +1,179 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+@import './_reset.css';
+@import './splash.scss';
+@import url(//db.onlinewebfonts.com/c/0930cc324c97c2d3be7b1a09e76fdaa2?family=PayPal+Sans+Big+Light);
+@import url(//db.onlinewebfonts.com/c/d3398b63eaca40daee65f5fa3b69402c?family=PayPal+Sans+Small);
+@import url(//db.onlinewebfonts.com/c/4ae8ae5d2fe851902b9c1cb0e824c4a4?family=PayPal+Sans+Big+Medium);
+ /* background-color: #0070ba; */
+
+body {
+  color: black;
+  font-family: PayPal Sans Big Light, Helvetica Neue,Arial,sans-serif;
+  font-size: 14px;
+  line-height: 1.5em;
+}
+
+.sendpal-logo-long{
+    display: flex;
+    margin: auto;
+    height: 135px;
+    width: 245px;
+}
+
+.form-header {
+   margin: 0 auto;
+   width: 400px;
+}
+ 
+.contentContainer {
+   display: flex;
+   flex-direction: column;
+   background: white;
+   padding: 10px 10% 0px;
+   border-radius: 5px;
+   border: 1px solid #9da3a6;
+}
+ 
+.formInput input {
+   height: 35px;
+   width: 100%;
+   padding: 0 20px;
+   border: 1px solid #9da3a6;
+   background: #fff;
+   text-overflow: ellipsis;
+   box-sizing: border-box;
+   border-radius: 4px;
+   box-shadow: none;
+   color: #000;
+   font-family: PayPal Sans Big Light, Helvetica Neue,Arial,sans-serif;
+   font-weight: 300;
+}
+.formInput {
+   position: relative;
+   margin: 0 0 20px;
+}
+.formInput .fieldLabel {
+   position: absolute;
+   color: #6c7378;
+   padding: 0;
+   border: 0;
+   height: 1px;
+   width: 1px;
+   overflow: hidden;
+}
+ 
+a.button:hover, a.button:link:hover, a.button:visited:hover, .button:hover {
+   background-color: #005ea6;
+   outline: 0;
+}
+a.button, a.button:link, a.button:visited, .button {
+   width: 100%;
+   height: 35px;
+   padding: 0;
+   border: 0;
+   display: block;
+   background-color: #0070ba;
+   border-radius: 4px;
+   cursor: pointer;
+   -webkit-tap-highlight-color: transparent;
+   color: #fff;
+   font-size: 8;
+   text-align: center;
+   font-weight: 700;
+   font-family: PayPal Sans Big Light, Helvetica Neue,Arial,sans-serif;
+   text-shadow: none;
+   text-decoration: none;
+   transition: background-color .4s ease-out;
+}
+ 
+.actionsSpaced {
+   margin-top: 25px;
+}
+ 
+.formField {
+   position: relative;
+   z-index: 2;
+   width: 100%;
+}
+ 
+a.button.secondary, a.button.secondary:link, a.button.secondary:visited, .button.secondary {
+   background-color: #E1E7EB;
+   color: #2C2E2F;
+   height: 26px;
+}
+a.button, a.button:link {
+   padding-top: 9px;
+   font-size: 14px;
+   font-weight: bold;
+}
+
+.orSeparator::after, .orSeparator::before {
+  display: inline-block;
+  width:43%;
+  border-top: 1px solid #333333;
+  content: "";
+  position: absolute;
+  top: .7em;
+}
+
+.orSeparator::after {
+   right: 0;
+}
+.orSeparator::before {
+   left: 0;
+}
+
+.orSeparator {
+  margin: 1em auto;
+  position: relative;
+  text-align: center;
+  font-family: Lucida Grande;
+  color: black;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.bTndemo {
+   align-items: center;
+   margin-top: 10px;
+   color: white;
+   background-color: rgb(4, 152, 4);
+   width: 120px;
+   height: 35px;
+   cursor: pointer;
+   border: none;
+   color: black;
+   border-radius: 24px;
+   font-family: PayPal Sans Big Light, Helvetica Neue,Arial,sans-serif;
+   font-weight: bold;
+}
+
+.bTndemo:focus {
+    outline:none;
+}
+
+.button.secondary {
+   height: 35px;
+}
+
+.errors {
+   height: 75px;
+   padding-top: 10px;
+   color: red;
+   font-weight: bold;
+}
