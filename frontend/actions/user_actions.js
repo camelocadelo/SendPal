@@ -5,7 +5,6 @@ export const RECEIVE_USER = "RECEIVE_USER";
 export const RECEIVE_UPDATED_USER = "RECEIVE_UPDATED_USER"
 
 const receiveAllUsers = (users) => {
-    // debugger
     return ({
         type: RECEIVE_ALL_USERS,
         users

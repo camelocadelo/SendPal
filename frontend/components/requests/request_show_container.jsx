@@ -3,8 +3,6 @@ import RequestShow from './request_show';
 import { fetchRequest } from '../../actions/request_actions';
 
 const mapSTP = (state, ownProps) => {
-    // debugger
-    //test
     let request = state.entities.requests[(parseInt(ownProps.match.params.requestId))]
     return ({
         request: request,

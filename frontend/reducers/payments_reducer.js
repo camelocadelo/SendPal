@@ -8,7 +8,6 @@ const paymentsReducer = (oldState={}, action) => {
         case RECEIVE_ALL_PAYMENTS:
             return action.payments;
         case RECEIVE_PAYMENT:
-            // debugger
             nextState[action.payload.payment.id] = action.payload.payment;
         // nextState = action.payload.payment;
             return nextState;
