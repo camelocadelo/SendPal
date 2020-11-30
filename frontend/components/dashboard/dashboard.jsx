@@ -25,6 +25,7 @@ class Dashboard extends React.Component {
     }
 
     updateBalance(balance){
+        debugger
         this.setState({
             balance: this.state.balance + parseInt(balance)
         })
@@ -103,7 +104,7 @@ class Dashboard extends React.Component {
         // );
 
         if (this.props.user) {
-
+            debugger
             return (
                 <div className="dashboard">
                     <div className="dashboard-content-container">
