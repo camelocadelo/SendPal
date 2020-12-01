@@ -70,14 +70,25 @@ To avoid N+1 queries, request data was prefetched in the backend prior to sendin
 In order to extract proper data and minimize run-time, data was methodically organized using jbuilder, then threaded down as part of a component's properties.
 
 ```js
-    // request container
+    // edit request container
     const mapSTP = (state) => {
+        let request = state.entities.requests[state.ui.modal.id];
+        let requestee = state.entities.users[state.entities.requests[state.ui.modal.id].requestee_id]
         return ({
             currentUser: state.entities.users[state.session.id],
-            allUsers: Object.values(state.entities.users),
-            request: state.entities.requests,
-            formType: 'request_payment',
+            request: request,
+            requestee: requestee,
+            formType: 'update_request',
+            updateBalance: (balance) => state.ui.modal.balance(balance)
         })
+    }
+
+    const mapDTP = (dispatch) => {
+        return ({
+            fetchRequest: (requestId) => dispatch(fetchRequest(requestId)),
+            updateRequest: (request) => dispatch(updateRequest(request)),
+            closeModal: () => dispatch(closeModal()),
+        });
     }
 ```
 
