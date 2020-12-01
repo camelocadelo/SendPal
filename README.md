@@ -42,7 +42,82 @@ Users can send transactions to other users within the SendPal community.
 ## Requests
 
 Users can request transactions from other users within the SendPal community, as well as, edit current requests.
-![image](https://github.com/iamtreetop/SendPal/blob/main/app/assets/images/readme/dashboard.png)
+![image](https://github.com/iamtreetop/SendPal/blob/main/app/assets/images/readme/request.png)
+
+To avoid N+1 queries, request data was prefetched in the backend prior to sending the response to the front-end. To maintain efficiency when fetching requests to be displayed on the dashboard, only the current user's requests were filtered and fetched from the database, while also updating the balance of both the requestor and requestee.
+
+```js
+    // request controller
+    def edit 
+        @request = Request.find(params[:id])
+        render :show
+    end
+
+    def update
+        @request = Request.find(params[:id])
+        if @request.update(request_params)
+            @requestor = User.find_by(id: @request.requestor_id)
+            @requestee = User.find_by(id: @request.requestee_id)
+            @requestor.update_attributes(balance: @requestor.balance + @request.amount)
+            @requestee.update_attributes(balance: @requestee.balance - @request.amount)
+            render :show
+        else
+            render json: @request.errors.full_messages, status: 400
+        end
+    end
+```
+
+In order to extract proper data and minimize run-time, data was methodically organized using jbuilder, then threaded down as part of a component's properties.
+
+```js
+    // request container
+    const mapSTP = (state) => {
+        return ({
+            currentUser: state.entities.users[state.session.id],
+            allUsers: Object.values(state.entities.users),
+            request: state.entities.requests,
+            formType: 'request_payment',
+        })
+    }
+```
+
+In the dashboard component, the current user can select any of his/her own requests to edit the request and get an updated balance. 
+
+```js
+    // dashboard component 
+    
+    // user's request list
+    activityList = this.props.requests.map(
+       (request, idx) => {
+            return (
+            <>
+                <li 
+                    onClick={() => this.props.openModal('request', request.id, this.updateBalance)}
+                    key={idx} 
+                    className="request-list-items">
+                    <div className="request-list-header">
+                        <div className="request-user">{allUsers[request.requestee_id].email}</div>
+                        <div className="request-amount">+ ${request.amount}</div>
+                    </div>
+                    <div className="request-list-body">
+                        <div className="request-body-items">
+                            <div className="request-date">{request.date}</div>
+                            <div className="request-note">"{request.note}"</div>
+                        </div>
+                    </div>
+                </li>
+            </>
+            )
+        }
+    )
+    
+    // update current user's balance
+    updateBalance(balance){
+        this.setState({
+            balance: this.state.balance + parseInt(balance)
+        })
+    }
+```
 
 ## Challenges
 
