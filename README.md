@@ -25,7 +25,7 @@ SendPal uses Ruby on Rails/PostgreSQL on the backend with React/Redux on the fro
 
 Users are presented with a clean and simple session form, which will allow them to either log in, create an account, or view the application through a Demo User.
 
-![image](https://github.com/iamtreetop/SendPal/blob/main/app/assets/images/readme/login-page.png)
+[![Image from Gyazo](https://i.gyazo.com/ef8e3b9e9c7833d57e763e691c690b0b.gif)](https://gyazo.com/ef8e3b9e9c7833d57e763e691c690b0b)
 
 ## Dashboard
 
@@ -37,12 +37,12 @@ Upon logging into SendPal, the user is redirected to their very own dashboard, w
 
 Users can send transactions to other users within the SendPal community.
 
-![image](https://github.com/iamtreetop/SendPal/blob/main/app/assets/images/readme/PaymentForm.png)
+[![Image from Gyazo](https://i.gyazo.com/91c37537a87fd851b3115e35d6034980.gif)](https://gyazo.com/91c37537a87fd851b3115e35d6034980)
 
 ## Requests
 
 Users can request transactions from other users within the SendPal community, as well as, edit current requests.
-![image](https://github.com/iamtreetop/SendPal/blob/main/app/assets/images/readme/request.png)
+[![Image from Gyazo](https://i.gyazo.com/7193d5758f8b2d85a30a0df70a839a3f.gif)](https://gyazo.com/7193d5758f8b2d85a30a0df70a839a3f)
 
 To avoid N+1 queries, request data was prefetched in the backend prior to sending the response to the front-end. To maintain efficiency when fetching requests to be displayed on the dashboard, only the current user's requests were filtered and fetched from the database, while also updating the balance of both the requestor and requestee.
 
