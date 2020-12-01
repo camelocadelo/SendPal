@@ -1,8 +1,10 @@
 # SendPal
 # Overview
-**A simple PayPal clone to send money to friends.**
+**A simple web application clone of PayPal to send and request transactions.**
 
 The main functionality of the web application is to be able to pay any given amount of money to any user with an account, friend users, and view recent recent activity.  
+
+SendPal uses Ruby on Rails/PostgreSQL on the backend with React/Redux on the frontend. This web application was fully designed and developed within a two-week time frame.
 
 ![image](https://github.com/iamtreetop/SendPal/blob/main/app/assets/images/readme/splash-page.png)
 
@@ -10,11 +12,12 @@ The main functionality of the web application is to be able to pay any given amo
 
 # Technologies
 * React/Redux
+* Ruby on Rails
+* PostgreSQL
 * HTML
 * CSS
-* Ruby on Rails
 * Javascript
-* JBuilder
+* JQuery
 
 # Features
 
@@ -32,15 +35,16 @@ Upon logging into SendPal, the user is redirected to their very own dashboard, w
 
 ## Payments
 
+Users can send transactions to other users within the SendPal community.
+
 ![image](https://github.com/iamtreetop/SendPal/blob/main/app/assets/images/readme/PaymentForm.png)
 
 ## Requests
 
-## Confirmation
+Users can request transactions from other users within the SendPal community, as well as, edit current requests.
+![image](https://github.com/iamtreetop/SendPal/blob/main/app/assets/images/readme/dashboard.png)
+
+## Challenges
 
 # Future Features
-* Friending - Allow logged in users to friend other users to send and request money
-* Comments - Allow logged in users to add, edit, and delete comments to payments and requests
 * Notifications - Logged in users will receive notifications when another user sends or requests money
-
-# SendPal
