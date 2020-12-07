@@ -57,3 +57,11 @@ export const updateRequest = (request) => {
         });
     };
 };
+
+export const deleteRequest = (requestId) => {
+    return (dispatch) => {
+        return RequestApiUtil.deleteRequest(requestId).then(() => {
+            dispatch(removeRequest(requestId))
+        });
+    };
+};
