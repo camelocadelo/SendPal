@@ -29,10 +29,10 @@ export const updateRequest = (request) => {
     })
 }
 
-// export const deleteRequest = (requestId) => {
-//     return $.ajax({
-//         url: `/api/requests/${requestId}`,
-//         method: `DELETE`,
-//     })
-// }
+export const deleteRequest = (requestId) => {
+    return $.ajax({
+        url: `/api/requests/${requestId}`,
+        method: `DELETE`,
+    })
+}
 
