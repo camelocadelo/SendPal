@@ -11,6 +11,10 @@ const requestsReducer = (oldState={}, action) => {
             nextState[action.payload.request.id] = action.payload.request;
             // nextState = action.payload.request;
             return nextState;
+        case REMOVE_REQUEST:
+            debugger
+            delete nextState[action.request.id]
+            return nextState;
         default:
             return oldState;
     }
