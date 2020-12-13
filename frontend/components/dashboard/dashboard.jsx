@@ -68,7 +68,6 @@ class Dashboard extends React.Component {
             activityList = this.props.requests.map(
                 (request, idx) => {
                     return (
-                    <>
                         <li 
                             onClick={() => this.props.openModal('request', request.id, this.updateBalance)}
                             key={idx} 
@@ -84,25 +83,12 @@ class Dashboard extends React.Component {
                                 </div>
                             </div>
                         </li>
-                    </>
                     )
                 }
             )
         }
-            
-        // const editForm = (
-        //     <>
-        //         <div>
-        //             <button 
-        //                 onClick={() => this.props.openModal('request')}
-        //                 className="sidebar-channel-items">
-        //             </button>
-        //         </div>
-        //     </>
-        // );
 
         if (this.props.user) {
-            debugger
             return (
                 <div className="dashboard">
                     <div className="dashboard-content-container">
