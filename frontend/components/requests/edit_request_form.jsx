@@ -14,7 +14,6 @@ class EditRequestForm extends React.Component {
     }
 
     deleteRequest() {
-        debugger
         this.props.deleteRequest(this.state.id)
             .then(() => {
                 this.props.closeModal()

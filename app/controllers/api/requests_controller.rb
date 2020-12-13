@@ -43,7 +43,7 @@ class Api::RequestsController < ApplicationController
     def destroy
         @request = Request.find(params[:id])
         if @request.destroy
-            debugger
+            # debugger
             @requestor = User.find_by(id: @request.requestor_id)
             @requestee = User.find_by(id: @request.requestee_id)
             @requestor.update_attributes(balance: @requestor.balance - @request.amount)

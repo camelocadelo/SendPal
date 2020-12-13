@@ -29,7 +29,6 @@ class RequestForm extends React.Component {
     }
 
     handleSubmit(email) {
-        debugger
         event.preventDefault();
 
         this.props.allUsers.map((user) => {
