@@ -30,6 +30,7 @@ export const updateRequest = (request) => {
 }
 
 export const deleteRequest = (requestId) => {
+    debugger
     return $.ajax({
         url: `/api/requests/${requestId}`,
         method: `DELETE`,

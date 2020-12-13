@@ -53,7 +53,7 @@ export const createRequest = (requestId) => {
 export const updateRequest = (request) => {
     return (dispatch) => {
         return RequestApiUtil.updateRequest(request).then((payload) => {
-            dispatch(receiveRequest(payload))
+            return dispatch(receiveRequest(payload))
         });
     };
 };
@@ -61,7 +61,7 @@ export const updateRequest = (request) => {
 export const deleteRequest = (requestId) => {
     return (dispatch) => {
         return RequestApiUtil.deleteRequest(requestId).then(() => {
-            dispatch(removeRequest(requestId))
+            return dispatch(removeRequest(requestId))
         });
     };
 };

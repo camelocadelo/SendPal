@@ -25,7 +25,6 @@ class Dashboard extends React.Component {
     }
 
     updateBalance(balance){
-        debugger
         this.setState({
             balance: this.state.balance + parseInt(balance)
         })
@@ -85,7 +84,6 @@ class Dashboard extends React.Component {
                                 </div>
                             </div>
                         </li>
-                        {/* <button>Delete Request</button> */}
                     </>
                     )
                 }

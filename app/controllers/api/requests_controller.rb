@@ -28,7 +28,6 @@ class Api::RequestsController < ApplicationController
     end
 
     def update
-        
         @request = Request.find(params[:id])
         if @request.update(request_params)
             @requestor = User.find_by(id: @request.requestor_id)
@@ -41,10 +40,19 @@ class Api::RequestsController < ApplicationController
         end
     end
 
-    # def show
-    #     @request = request.find(params[:id])
-    #     render :show
-    # end
+    def destroy
+        @request = Request.find(params[:id])
+        if @request.destroy
+            debugger
+            @requestor = User.find_by(id: @request.requestor_id)
+            @requestee = User.find_by(id: @request.requestee_id)
+            @requestor.update_attributes(balance: @requestor.balance - @request.amount)
+            @requestee.update_attributes(balance: @requestee.balance + @request.amount)
+            render :show
+        else
+            render json: @request.errors.full_messages, status: 400
+        end
+    end
 
     private
     def request_params
