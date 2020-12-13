@@ -6,20 +6,19 @@ class EditRequestForm extends React.Component {
         super(props);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.state = this.props.request;
-        // {
-        //     // id: this.props.request.id,
-        //     email: this.props.requestee.email,
-        //     amount: this.props.request.amount,
-        //     note: this.props.request.note
-        // };
+        this.deleteRequest = this.deleteRequest.bind(this);
     }
     
-    // componentDidMount(){
-    //     this.props.fetchRequest(this.props.requestId);
-    // }
-
     update(field) {
         return (e) => this.setState({ [field]: e.currentTarget.value })
+    }
+
+    deleteRequest() {
+        debugger
+        this.props.deleteRequest(this.state.id)
+            .then(() => {
+                this.props.closeModal()
+            });
     }
 
     handleSubmit() {
@@ -38,9 +37,6 @@ class EditRequestForm extends React.Component {
 
 
     render() {
-        // const { formType, request, updateRequest } = this.props;
-        // const request = this.props.requests;
-        // if (!request) return null;
         return (
             <div className="edit-request-container" >
                 <div className="edit-request-wrapper">
@@ -63,6 +59,9 @@ class EditRequestForm extends React.Component {
                                 <p>00000HJ{this.props.request.id}</p>
                                 {/* <p>{Math.floor(Math.random(1) *10000000)}H{this.props.request.id}</p> */}
                             </div>
+                            <button
+                                onClick={this.deleteRequest}>Delete Request
+                            </button>
                         </div>
                         <form className="edit-form" onSubmit={this.handleSubmit}>
                             <br/>
@@ -102,11 +101,6 @@ class EditRequestForm extends React.Component {
                     </div>
                 </div>
             </div>
-            // <RequestForm
-            // formType={formType}
-            // request={request}    
-            // updateRequest={updateRequest}
-            // />
         )
     };
 };
