@@ -43,27 +43,42 @@ class Dashboard extends React.Component {
         this.setState({selectedHeader: "payments"})
     }
 
-    // resendList() {
-    //     let list = [];
-    //     if (!list.include(payee_id)) {
-    //         for (let i = 0; i < 4; i++){
-    //             list.push(payee_id);
+    sendAgain() {
+        debugger
+        let payments = this.props.payments; //[{},{},{},{},{}] 5
+        let list = [];
+        for (let i = payments.length - 1; list.length < 4; i--){ //4; 0 < 4; i--
+            if (!list.includes(payments[i].payee_id)) { //payments[4].payee_id
+                list.push(payments[i]);
+            }
+        }
+        return list;
+    }
+
+    // alreadySeen(arr) {
+    //     let visited = [];
+    //     for (let i = 0; i < arr.length; i++){
+    //         if (!visited.includes(arr[i])){
+    //             visited.push(arr[i])
     //         }
     //     }
-    //     return list;
+    //     return visited;
     // }
 
     render() {
         let allUsers = this.props.users;
-        if (Object.values(allUsers).length <= 1) return null
+        let allPayments = this.props.payments; 
+        if (Object.values(allUsers).length <= 1) return null;
+
         debugger
-        let resendList = new Array(4);
-        resendList = this.props.payments.map(
+
+        let resendList;
+        resendList = this.sendAgain().map(
             (payment, idx) => {
                 return (
                     <ul key={idx} className="pals-list">
                         <div className="pals-details">
-                            <button id="pals">V W</button>
+                            <button id="pals">{allUsers[payment.payee_id].email[0].toUpperCase()}</button>
                             <p>{allUsers[payment.payee_id].email}</p>
                         </div>
                     </ul>
