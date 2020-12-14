@@ -43,9 +43,33 @@ class Dashboard extends React.Component {
         this.setState({selectedHeader: "payments"})
     }
 
+    // resendList() {
+    //     let list = [];
+    //     if (!list.include(payee_id)) {
+    //         for (let i = 0; i < 4; i++){
+    //             list.push(payee_id);
+    //         }
+    //     }
+    //     return list;
+    // }
+
     render() {
         let allUsers = this.props.users;
         if (Object.values(allUsers).length <= 1) return null
+        debugger
+        let resendList = new Array(4);
+        resendList = this.props.payments.map(
+            (payment, idx) => {
+                return (
+                    <ul key={idx} className="pals-list">
+                        <div className="pals-details">
+                            <button id="pals">V W</button>
+                            <p>{allUsers[payment.payee_id].email}</p>
+                        </div>
+                    </ul>
+                )
+            }
+        )
 
         let activityList;
         if (this.state.selectedHeader === "payments"){
@@ -132,24 +156,9 @@ class Dashboard extends React.Component {
 
                             <div className="pals-container">
                                 <h3 className="pals-header">Send Again</h3>
-                                <ul className="pals-list">
-                                    <div className="pals-details">
-                                        <button id="pals">V W</button>
-                                        <p>venuswilliams</p>
-                                    </div>
-                                    <div className="pals-details">
-                                        <button id="pals">M J</button>
-                                        <p>michaeljordan</p>
-                                    </div>
-                                    <div className="pals-details">
-                                        <button id="pals">L J</button>
-                                        <p>lebronjames</p>
-                                    </div>
-                                    <div className="pals-details">
-                                        <button id="pals">I C</button>
-                                        <p>icecube</p>
-                                    </div>
-                                </ul>
+                                <div className="pals-wrapper">
+                                    {resendList}
+                                </div>
                             </div>
 
                             <div className="activities-container">
