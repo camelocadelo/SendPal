@@ -143,3 +143,26 @@
     color: #0070ba;
   }
 }
+
+.delete-btn{
+  border: 1px solid red;
+  border-radius: 25px;
+  padding: 10px 19px;
+  width: 165px;
+  margin-top: 55px;
+  text-decoration: none;
+  background-color: transparent;
+  color: red;
+  cursor: pointer;
+  &:active {
+    text-decoration: underline;
+  }
+  &:focus{
+    outline: 0;
+  }
+  &:hover {
+    // border: 1.5px solid #fff;
+    font-weight: bold;
+    color: red;
+  }
+}

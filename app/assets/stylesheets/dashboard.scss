@@ -158,6 +158,10 @@
     font-family: PayPal Sans Big Medium;
 }
 
+.pals-wrapper {
+    display: flex;
+}
+
 .pals-list {
     display: flex;
     justify-content: space-evenly;
@@ -184,6 +188,10 @@
     border-radius: 50%;
     border: none;
 }
+
+#pals:hover {
+    cursor: pointer;
+} 
 
 .activities-container{
     display: flex;

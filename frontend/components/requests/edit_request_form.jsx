@@ -58,7 +58,7 @@ class EditRequestForm extends React.Component {
                                 <p>00000HJ{this.props.request.id}</p>
                                 {/* <p>{Math.floor(Math.random(1) *10000000)}H{this.props.request.id}</p> */}
                             </div>
-                            <button
+                            <button className="delete-btn"
                                 onClick={this.deleteRequest}>Delete Request
                             </button>
                         </div>
