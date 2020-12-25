@@ -6,43 +6,50 @@ class EditRequestForm extends React.Component {
         super(props);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.state = this.props.request;
-        this.deleteRequest = this.deleteRequest.bind(this);
+        this.destroyRequest = this.destroyRequest.bind(this);
     }
     
     update(field) {
         return (e) => this.setState({ [field]: e.currentTarget.value })
     }
 
-    deleteRequest() {
+    destroyRequest(event) {
+        event.preventDefault();
         this.props.deleteRequest(this.state.id)
             .then(() => {
-                this.props.closeModal()
+                this.props.updateBalance(-this.state.amount)
+                // this.props.closeModal();
             });
+        this.props.closeModal();
     }
 
     handleSubmit() {
         event.preventDefault();
         // this.props.currentUser // {id: 9, email: "LisaREALG@noblecheetah.io", balance: 1006}
-        if (Number(this.state.amount) >= 0) {
-            this.props.updateRequest(this.state)
-                .then(() => {
-                    this.props.closeModal()
-                    this.props.updateBalance(this.state.amount)
-                })
-        } else { 
-            return "errors"
-        }
+        let diff = -(this.props.request.amount - this.state.amount) // 25 - 14 = 11
+        // if (Number(this.state.amount) >= 0) {
+
+        this.props.updateRequest(this.state, {oldAmount: this.props.request.amount})
+        .then(() => {
+            this.props.closeModal()
+            // this.props.updateBalance(this.state.amount)
+            this.props.updateBalance(diff)
+        })
+        // } else { 
+        //     return "errors"
+        // }
     };
 
 
     render() {
+        // debugger
         return (
             <div className="edit-request-container" >
                 <div className="edit-request-wrapper">
                     <div className="edit-request-header">
                         <div className="edit-header-left">
                             <h1 className="edit-left-head">{this.props.requestee.email}</h1>
-                            <p>DATE HERE</p>
+                            <p>{Date.parse(this.props.request.date)}</p>
                             <p>Money Received</p>
                         </div>
                         <h1 className="edit-request-amount">+ $ {this.props.request.amount}</h1>
@@ -59,7 +66,7 @@ class EditRequestForm extends React.Component {
                                 {/* <p>{Math.floor(Math.random(1) *10000000)}H{this.props.request.id}</p> */}
                             </div>
                             <button className="delete-btn"
-                                onClick={this.deleteRequest}>Delete Request
+                                onClick={this.destroyRequest}>Delete Request
                             </button>
                         </div>
                         <form className="edit-form" onSubmit={this.handleSubmit}>

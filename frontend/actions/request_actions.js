@@ -60,7 +60,7 @@ export const updateRequest = (request) => {
 
 export const deleteRequest = (requestId) => {
     return (dispatch) => {
-        return RequestApiUtil.deleteRequest(requestId).then(() => {
+        return RequestApiUtil.deleteRequest(requestId).then((res) => {
             return dispatch(removeRequest(requestId))
         });
     };

@@ -43,17 +43,16 @@ class Dashboard extends React.Component {
         this.setState({selectedHeader: "payments"})
     }
 
-    sendAgain() {
-        debugger
-        let payments = this.props.payments; //[{},{},{},{},{}] 5
-        let list = [];
-        for (let i = payments.length - 1; list.length < 4; i--){ //4; 0 < 4; i--
-            if (!list.includes(payments[i].payee_id)) { //payments[4].payee_id
-                list.push(payments[i]);
-            }
-        }
-        return list;
-    }
+    // sendAgain() {
+    //     let payments = this.props.payments; //[{},{},{},{},{}] 5
+    //     let list = [];
+    //     for (let i = payments.length - 1; list.length < 4; i--){ //4; 0 < 4; i--
+    //         // if (!list.includes(payments[i].payee_id)) {
+    //             list.push(payments[i]);
+    //         // }
+    //     }
+    //     return list;
+    // }
 
     // alreadySeen(arr) {
     //     let visited = [];
@@ -70,19 +69,24 @@ class Dashboard extends React.Component {
         let allPayments = this.props.payments; 
         if (Object.values(allUsers).length <= 1) return null;
 
-        debugger
+        // debugger
 
         let resendList;
-        resendList = this.sendAgain().map(
+        resendList = this.props.payments.map(
             (payment, idx) => {
-                return (
-                    <ul key={idx} className="pals-list">
+                while (idx < 4) {
+                    let payeeInitial = allUsers[payment.payee_id].email[0].toUpperCase()
+                    let payeeName = allUsers[payment.payee_id].email.split('@')[0]
+                    // debugger
+                    return (
+                        <ul key={idx} className="pals-list">
                         <div className="pals-details">
-                            <button id="pals">{allUsers[payment.payee_id].email[0].toUpperCase()}</button>
-                            <p>{allUsers[payment.payee_id].email}</p>
+                            <button id="pals">{payeeInitial}</button>
+                            <p>{payeeName}</p>
                         </div>
                     </ul>
-                )
+                    )
+                }
             }
         )
 
